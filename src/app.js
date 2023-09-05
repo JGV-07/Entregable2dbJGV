@@ -1,10 +1,11 @@
 import express from 'express';
 import db from "./utils/database.js";
 import Todo from './models/todos.model.js';
+import 'dotenv/config';
 
 Todo;
 
-const PORT = 8000
+const PORT = process.env.PORT ?? 8000;
 
 db.authenticate()
     .then( () =>{console.log('Conexion correcta')})
